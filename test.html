@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    
+
+</head>
+<body ng-controller="indexCtrl">
+    <div class="container" ng-init="init()">
+        <div class="row mt-5">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <small class="text-secondary">Genero</small>
+                            <select name="gender" ng-model="newItem.gender" class="form-select form-select-sm">
+                                <option ng-value="undefined">--SELECCIONE--</option>
+                                <option ng-repeat="g in genders" ng-value="g.id">{{g.name | uppercase}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <small class="text-secondary">Mensaje</small>
+                            <textarea name="message" ng-model="newItem.message" rows="4" style="resize: none;" class="form-control form-control-sm"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <small class="text-secondary">Voz</small>
+                            <select name="gender" ng-model="newItem.voice" class="form-select form-select-sm">
+                                <option ng-value="undefined">--SELECCIONE--</option>
+                                <option ng-repeat="g in voices" ng-value="g.id">{{g.name | uppercase}}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group text-center mt-3">
+                            <button class="btn btn-light text-danger me-5">
+                                <i class="fa fa-times me-1"></i>Cancelar
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fa fa-times me-1"></i>Grabar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
